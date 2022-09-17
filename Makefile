@@ -1,12 +1,11 @@
 GCC=g++
-STD=-std=c++14
+STD=-std=c++20
 OUT=test
 
 SOURCES= \
 	src/main.cpp \
 	src/Block.cpp \
 	src/Transaction.cpp \
-	src/Config.cpp \
 	src/Sha256.cpp \
 	src/Chain.cpp
 

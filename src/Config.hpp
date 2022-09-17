@@ -14,8 +14,7 @@ class Config {
         void add(std::string key, std::string val);
         void add(std::string key, bool val);
 
-        template<typename T>
-        T get(std::string key);
+        auto get(std::string key) const;
     
     protected:
 

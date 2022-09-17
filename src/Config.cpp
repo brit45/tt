@@ -22,21 +22,20 @@ void Config::add(std::string key, bool val) {
     this->map_bool[key]  = val;
 }
 
-template<typename T>
-T Config::get(std::string key) {
+auto Config::get(std::string key) const {
 
     if(this->registre[key] == "map_int") {
         
-        return (T) this->map_int[key];
+        return this->map_int[key];
     }
     else if(this->registre[key] == "map_bool") {
         
-        return (T) this->map_bool[key];
+        return this->map_bool[key];
     }
     else if(this->registre[key] == "map_string") {
         
-        return (T) this->map_string[key];
+        return this->map_string[key];
     }
 
-    return 0;
+    return  false;
 }

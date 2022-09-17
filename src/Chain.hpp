@@ -2,8 +2,6 @@
 #define __CRYPTO_CHAIN_HPP__
 
 #include <iostream>
-#include <boost/serialization/base_object.hpp>
-
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -20,7 +18,9 @@ namespace CRYPTO_ {
             Chain();
             ~Chain();
 
-            void addTransaction(std::string to, std::string from, double ammount);
+            void load_Block();
+
+            void create_ticket_dir();
             
         private:
         
@@ -31,6 +31,9 @@ namespace CRYPTO_ {
 
             // LISTE DES NOMS DE BLOCK PAR ORDRE NUMÉRIQUE 
             std::string index;
+            std::string CURRENT;
+            std::string TICKET;
+            std::string local = std::getenv("HOME");
     };
 
     // BOOST_CLASS_VERSION(Chain, 1)
